@@ -1,0 +1,39 @@
+{
+  "name": "ws-demo-frontend",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Filip Joelsson",
+    "email": "filip@pixiecoder.com",
+    "url": "http://pixiecoder.com"
+  },
+  "dependencies": {
+    "@babel/core": "7.0.0-beta.40",
+    "@babel/preset-env": "7.0.0-beta.40",
+    "babel-loader": "^8.0.0-beta.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-redux": "5.0.7",
+    "recompose": "0.26.0",
+    "redux": "3.7.2",
+    "redux-actions": "2.2.1",
+    "webpack": "3.10.0"
+  },
+  "scripts": {
+    "start": "webpack",
+    "dev": "webpack --watch"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.40",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.40",
+    "@babel/plugin-proposal-optional-chaining": "7.0.0-beta.40",
+    "@babel/plugin-transform-react-jsx": "7.0.0-beta.40",
+    "@babel/preset-react": "7.0.0-beta.40",
+    "babel-preset-react-app": "3.1.1",
+    "clean-webpack-plugin": "0.1.18",
+    "html-webpack-plugin": "3.0.4",
+    "redux-devtools-extension": "2.13.2",
+    "webpack-babel-plugin": "0.0.2",
+    "webpack-cli": "2.0.10"
+  }
+}

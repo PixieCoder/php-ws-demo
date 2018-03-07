@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  web:
+    image: weahead/nginx:1.11.3
+    links:
+      - ws-demo-backend:ws-demo-backend
+    ports:
+      - "8080:8080"
+      - "2345:2345"
+    volumes_from:
+      - ws-demo-frontend
+    depends_on:
+      - ws-demo-backend
+
+  ws-demo-backend:
+    build: ./ws-demo-backend
+    image: pixiecoder/ws-demo-backend:dev
+    expose:
+      - "2345"
+    entrypoint: /app/entrypoint.sh
+    environment:
+      PHP_ENV: production
+    volumes:
+      - ./ws-demo-backend/app:/app
+
+  ws-demo-frontend:
+    build: ./ws-demo-frontend
+    image: pixiecoder/ws-demo-frontend:dev
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./ws-demo-frontend/app:/app

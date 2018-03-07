@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  web:
+    environment:
+      VIRTUAL_HOST: ws-demo.docker
+      VIRTUAL_PORT: 8080
+      USE_DNSMASQ: 1
+    volumes:
+      - ./docker-config/usr-local-etc:/usr/local/etc
+
+  ws-demo-backend:
+    environment:
+      PHP_ENV: development
+
+  ws-demo-frontend:
+    environment:
+      NODE_ENV: development

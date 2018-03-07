@@ -1,0 +1,22 @@
+{
+  "name": "pixiecoder/ws-demo-backend",
+  "version": "0.0.1",
+  "type": "project",
+  "license":"MIT",
+  "authors": [
+    {
+      "name": "Filip Joelsson",
+      "email": "filip@pixiecoder.com"
+      "homepage": "http://pixiecoder.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WsDemo\\": "src"
+    }
+  },
+  "require": {
+    "cboden/ratchet": "0.4"
+  }
+}
