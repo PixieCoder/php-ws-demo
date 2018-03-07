@@ -8,9 +8,10 @@ import {
 } from '../actions';
 
 const initialState = {
-    connected: false,
-    lastSent : null,
-    msgQueue : [],
+    connected    : false,
+    authenticated: false,
+    lastSent     : null,
+    msgQueue     : [],
 };
 
 const socketConnectReducer = (state, action) => ({...state, connected: true});
@@ -19,7 +20,9 @@ const socketDisconnectReducer = (state, action) => ({...state, connected: false}
 
 const socketReceiveReducer = (state, action) => ({
     ...state,
-    msgQueue: [...state.msgQueue, action.payload, ],
+    authenticated: action.payload.type === 'login' && action.payload.authenticated === true
+        ? true : state.authenticated,
+    msgQueue     : [...state.msgQueue, action.payload,],
 });
 
 const socketSendReducer = (state, action) => ({

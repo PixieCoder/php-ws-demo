@@ -22,7 +22,7 @@ const MessageView = ({msgQueue}) => (
         }}>
             <ul>
                 {
-                    msgQueue.map((msg, i) => <li key={i}>{msg.text}</li>)
+                    msgQueue.map((msg, i) => <li key={i}>{msg.from ? msg.from : 'me'}:{msg.text}</li>)
                 }
             </ul>
         </div>
